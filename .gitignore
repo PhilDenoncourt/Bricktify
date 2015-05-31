@@ -1,0 +1,14 @@
+node_modules
+.tmp
+.sass-cache
+.idea
+bower_components
+dist
+gitOld
+app/scripts/config.js
+app/scripts/controllers/*.js
+app/scripts/controllers/*.js.map
+app/scripts/services/*.js
+app/scripts/services/*.js.map
+app/scripts/directives/*.js
+app/scripts/directives/*.js.map

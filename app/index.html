@@ -1,0 +1,154 @@
+<!doctype html>
+<!--suppress ALL -->
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css "/>
+    <link rel="stylesheet" href="styles/joyride-2.1.css" />
+    <!-- endbuild -->
+  </head>
+  <body ng-app="brickifyApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container">
+      <div class="header">
+
+        <h3 class="text-muted">Bricktifier</h3>
+      </div>
+
+      <div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>Recently, I watched the documentary <cite>Inside Lego</cite> (It's available on <a
+              href="https://www.netflix.com/WiMovie/80005609?trkid=" target="_new">Netflix</a> right now).
+              It showed a picture of the CEO rendered in legos. I had a week of downtime between projects, and decided to see if I
+              could write something that would enable anyone, using just their browser, to create a portrait.</p>
+          </div>
+          <div class="col-md-12" data-ng-controller="MainCtrl as mnCtl">
+
+
+            <div ng-include="'views/ImageSelect.html'">
+
+            </div>
+            <div ng-include="'views/Bricktify.html'">
+
+            </div>
+            <div ng-include="'views/PartsList.html'">
+
+            </div>
+            <div ng-include="'views/StepsList.html'">
+
+            </div>
+          </div>
+        </div>
+        <ol data-help class="hide">
+          <li data-class="uploadImage">Press this button to upload an image from your device. This is the image that will be
+            <em>Bricktified!</em><br/><br/></li>
+          <li data-id="bricktify">Once you've selected an image, push this button to <em>bricktify</em> it. <br/><br/></li>
+          <li data-id="brickImageWidth">To expand or reduce the amount of bricks, you can change the vertical and horizontal
+            sizing.<br/><br/></li>
+          <li data-id="filterColors">If some of the colors look off, or are difficult to obtain, you can restrict which brick
+            colors are used.<br/><br/></li>
+          <li data-id="frameOptions">We can automatically place a border around your image.<br/><br/></li>
+          <li data-id="partsTable">After you've <em>bricktified</em> your image, a list is shown of all the bricks you will need,
+            and possible vendors that have the bricks.<br/><br/></li>
+          <li data-id="stepToBuild">Also, step by step instructions are listed to help you construct the portrait.<br/><br/></li>
+        </ol>
+        <script type="text/ng-template" id="whyLxfmlDialog">
+          <div class="panel panel-info">
+            <div class="panel-heading">Why do I need Lxfml?</div>
+            <div class="panel-body"><p>This site tranlates an image into a bricktified version, and produces a parts list for you.
+              Once you have all the parts necessary, it can be tough to determine the steps needed to put it together.  If you download the <a href="http://ldd.lego.com/">Lego&reg; Digital Designer</a>,
+              you can take the Lxfml file generated from this site, and import it.  The Digital Designer can produce a set of building instructions that will help you build your Brick portrait.</p></div>
+            <div class="panel-footer"><button class="btn btn-primary" ng-click="$close()">OK</button></div>
+          </div>
+        </script>
+      </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- LegoizeAds -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8829035634388232"
+             data-ad-slot="1363255077"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;//noinspection CommaExpressionJS
+          i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();//noinspection CommaExpressionJS
+          a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53304942-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/fabric/dist/fabric.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/jquery.joyride-2.1.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/config.js"></script>
+        <script src="scripts/controllers/brickify.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/partsList.js"></script>
+        <script src="scripts/controllers/showBrickImage.js"></script>
+        <script src="scripts/controllers/steps.js"></script>
+        <script src="scripts/directives/detailedBrickImage.js"></script>
+        <script src="scripts/directives/help.js"></script>
+        <script src="scripts/directives/bricktifiedImage.js"></script>
+        <script src="scripts/directives/uploadImage.js"></script>
+        <script src="scripts/services/aspectRatioService.js"></script>
+        <script src="scripts/services/brickCalculationService.js"></script>
+        <script src="scripts/services/canvasContextService.js"></script>
+        <script src="scripts/services/helpService.js"></script>
+        <script src="scripts/services/brickService.js"></script>
+        <script src="scripts/services/brickOptionsService.js"></script>
+        <script src="scripts/services/bricktifyService.js"></script>
+        <script src="scripts/services/StepService.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

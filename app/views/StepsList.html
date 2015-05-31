@@ -1,0 +1,32 @@
+<div heading="Steps to Build" class=".hidden-print" id="stepToBuild" data-ng-controller="StepsCtrl as spCtl">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4>Steps to build</h4>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-12 text-center" data-ng-show="spCtl.currentDocument.brickList">
+          <div class="buildPanel">
+            <div class="buildView">
+              <data-detailed-brick-image step="spCtl.stepNum"></data-detailed-brick-image>
+            </div>
+            <div class="buildNav">
+              <div>
+                <span class="glyphicon glyphicon-chevron-left" data-ng-click="spCtl.previousStep()"></span>
+                <span class="glyphicon glyphicon-chevron-right" data-ng-click="spCtl.nextStep()"></span>
+              </div>
+              <div class="buildStepList">
+                <div data-ng-repeat="step in spCtl.abbreviatedSteps" >
+                  <a data-ng-click="spCtl.setStep($index+1)" >{{step}}</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="buildStepDescription">
+            <h4>Step {{spCtl.stepNum}}</h4>
+            <span>{{spCtl.stepDescription}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

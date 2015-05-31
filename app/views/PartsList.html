@@ -1,0 +1,33 @@
+<div heading="Parts List" data-ng-controller="PartsListCtrl as plCtl">
+  <div class="panel panel-primary">
+    <div class="panel-heading"><a href="" data-ng-click="plCtl.print()" class="pull-right bg-primary"><i class="fa fa-print"></i></a> <h4>Parts List</h4></div>
+    <div class="panel-body">
+      <table id="partsTable" class="table table-condensed">
+        <thead>
+        <tr>
+          <th>Qty</th>
+          <th>Part Num</th>
+          <th>Description</th>
+          <th>Obtain</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="part in plCtl.neededParts">
+          <td>{{part.qty}}</td>
+          <td>{{part.designId}}</td>
+          <td>
+            {{part.description}}
+          </td>
+          <td>
+            <div ng-repeat="src in part.srcs">
+              <!--suppress HtmlUnknownTarget -->
+              <a href="{{src.url}}" target="_new">{{src.desc}}</a>
+
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

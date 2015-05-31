@@ -1,0 +1,78 @@
+<div heading="Bricktify" class=".hidden-print" data-ng-controller="BricktifyCtrl as btCtl">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4>Bricktify</h4>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-6">
+        <div class="panel-info panel">
+          <div class="panel-body">
+            <div class="form-group">
+              <div class="panel panel-default">
+                <div class="panel-heading"><h4 class="panel-heading" id="frameOptions"><a
+                  href=""
+                  data-ng-click="btCtl.toggleBorder()">Frame
+                  Options</a></h4></div>
+                <div class="panel-body" data-ng-show="btCtl.showBorder">
+                  <label for="addBorder"><input type="checkbox" id="addBorder"
+                                                data-ng-model="btCtl.currentDocument.addBorder">Add Border</label>
+                  <select data-ng-model="btCtl.currentDocument.selectedBorder" data-ng-options="color.num as color.color for color in btCtl.brickColors">
+
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="brickImageWidth">Width</label>
+              <input type="range" min="10" max="100" id="brickImageWidth"
+                     data-ng-model="btCtl.currentDocument.dimensions.width">
+              <span class="pull-right">{{btCtl.currentDocument.dimensions.width}}</span>
+            </div>
+            <div class="form-group" data-ng-show="!btCtl.keepAspectRatio">
+              <label for="brickImageHeight">Height</label>
+              <input type="range" min="10" max="100" id="brickImageHeight"
+                     data-ng-model="btCtl.currentDocument.dimensions.height" data-ng-disabled="btCtl.keepAspectRatio">
+              <span class="pull-right">{{btCtl.currentDocument.dimensions.height}}</span>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" data-ng-model="btCtl.keepAspectRatio" />Keep Aspect Ratio
+              </label>
+            </div>
+            <div class="form-group">
+              <div class="panel panel-default" id="filterColors">
+                <div class="panel-heading"><h4 class="panel-heading"><a
+                  href="" data-ng-click="btCtl.toggleFilterColors()"> Filter Colors</a>
+                </h4></div>
+                <div class="panel-body" id="colorPanel" data-ng-show="btCtl.showFilterColors">
+                  <label ng-repeat="color in btCtl.brickColors" for="col{{color.num}}"><input
+                    type="checkbox"
+                    id="col{{color.num}}" data-ng-model="btCtl.currentDocument.filterColors[color.num]"/>
+                    <small style="/*noinspection CssInvalidPropertyValue*/color: #{{color.r.toString(16)}}{{color.g.toString(16)}}{{color.b.toString(16)}}">
+                      {{color.color}}
+                    </small>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="text-info">This portrait will be {{btCtl.currentDocument.dimensions.height *
+                btCtl.currentDocument.dimensions.width}} studs</p>
+              <p>It will be {{btCtl.currentDocument.dimensions.width * .8 | number:2}} cm x {{btCtl.currentDocument.dimensions.height *.8|number:2}} cm --or--</p>
+              <p>It will be {{btCtl.currentDocument.dimensions.width * 0.314961 | number:2}} in x {{btCtl.currentDocument.dimensions.height * 0.314961|number:2}} in</p>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" data-ng-click="btCtl.bricktify()" id="bricktify"
+                      data-ng-disabled="!btCtl.aspectRatio.hasBeenUploaded"><i class="fa fa-cog"></i> Bricktify!
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <data-bricktified-image data-context="brck"></data-bricktified-image>
+      </div>
+    </div>
+  </div>
+</div>
