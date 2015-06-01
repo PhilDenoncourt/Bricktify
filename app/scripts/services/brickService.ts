@@ -14,6 +14,7 @@ module Services {
     g:number;
     b:number;
     a:number;
+    BricklinkId:number;
   }
 
   export interface IPart {
