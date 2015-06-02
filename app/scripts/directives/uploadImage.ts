@@ -88,7 +88,7 @@ module Directives {
                         ctx.drawImage(tempCanvas,0,0);
                         ctx.restore();
 
-                        scope[attrs.aspectRatio].setRatio(domCanvas.height/domCanvas.width);
+                        _aspectRatioService.getCurrentAspectRatio().setRatio(domCanvas.height/domCanvas.width);
 
                     };
                 }

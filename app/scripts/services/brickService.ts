@@ -29,7 +29,7 @@ module Services {
     }
 
     getAllColors():IColor[] {
-      return this._colors;
+      return _.sortBy(this._colors, 'color');;
     }
 
     getPartsWithMultipleStudsForColor(color:number): IPart[] {
